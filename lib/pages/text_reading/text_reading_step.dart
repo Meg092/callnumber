@@ -1,6 +1,6 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:get/get.dart';
 
 import '../calling_write/calling_write_logic.dart';
 
@@ -23,7 +23,7 @@ class TextReadingStep extends GetView<CallingWriteLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.xrptbw.value)),
+              url: WebUri.uri(Uri.parse(controller.euydw.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

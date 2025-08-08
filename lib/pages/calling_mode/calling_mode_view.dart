@@ -111,8 +111,8 @@ class CallingModePage extends GetView<CallingModeLogic> {
                       Fluttertoast.showToast(msg: 'Please input number');
                       return;
                     }
-                    controller.tts.stop();
-                    controller.tts.speak(
+                    controller.flutterTts.stop();
+                    controller.flutterTts.speak(
                         '${controller.headerTitle}${controller.currentNum.value}${controller.footerTitle}');
                   })),
                   const SizedBox(
@@ -140,8 +140,8 @@ class CallingModePage extends GetView<CallingModeLogic> {
                     }
 
                     controller.currentNum.value = incrementWithLeadingZeros(controller.currentNum.value);
-                    controller.tts.stop();
-                    controller.tts.speak(
+                    controller.flutterTts.stop();
+                    controller.flutterTts.speak(
                         '${controller.headerTitle}${controller.currentNum.value}${controller.footerTitle}');
                   })),
                 ].toRow(mainAxisAlignment: MainAxisAlignment.end)

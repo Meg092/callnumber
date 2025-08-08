@@ -1,10 +1,10 @@
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:text_to_speech/text_to_speech.dart';
 
 class CallingModeLogic extends GetxController {
 
-  final TextToSpeech tts = TextToSpeech();
+  final FlutterTts flutterTts = FlutterTts();
 
   String headerTitle = '';
   String footerTitle = '';
@@ -18,14 +18,14 @@ class CallingModeLogic extends GetxController {
     headerTitle = prefs.getString('header') ?? '';
     footerTitle = prefs.getString('footer') ?? '';
     final language = prefs.getString('language') ?? '';
-    await tts.setLanguage(language);
+    await flutterTts.setLanguage(language);
     super.onInit();
   }
 
   @override
   void onClose() {
     // TODO: implement onClose
-    tts.stop();
+    flutterTts.stop();
     super.onClose();
   }
 

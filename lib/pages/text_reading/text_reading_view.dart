@@ -60,7 +60,7 @@ class TextReadingPage extends GetView<TextReadingLogic> {
                     return;
                   }
                   try {
-                    controller.tts.speak(controller.title);
+                    controller.flutterTts.speak(controller.title);
                   } catch (e) {
                     Fluttertoast.showToast(msg: 'Reading aloud failed: $e');
                   }
