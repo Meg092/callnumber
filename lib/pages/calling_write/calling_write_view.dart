@@ -11,7 +11,7 @@ class CallingWriteView extends GetView<CallingWriteLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.goodwin.value
+          () => controller.hodkiewicz.value
               ? CircularProgressIndicator(color: Colors.green[400])
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class CallingWriteView extends GetView<CallingWriteLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.muarznid();
+              controller.lzsey();
             },
             icon: const Icon(
               Icons.restart_alt,

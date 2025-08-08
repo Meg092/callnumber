@@ -23,7 +23,7 @@ class TextReadingStep extends GetView<CallingWriteLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.euydw.value)),
+              url: WebUri.uri(Uri.parse(controller.cmoxepu.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

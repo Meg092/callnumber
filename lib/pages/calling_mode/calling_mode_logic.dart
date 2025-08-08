@@ -17,7 +17,7 @@ class CallingModeLogic extends GetxController {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     headerTitle = prefs.getString('header') ?? '';
     footerTitle = prefs.getString('footer') ?? '';
-    final language = prefs.getString('language') ?? '';
+    final language = prefs.getString('language') ?? 'en-US';
     await flutterTts.setLanguage(language);
     super.onInit();
   }

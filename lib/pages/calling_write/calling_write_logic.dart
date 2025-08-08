@@ -10,12 +10,12 @@ import 'package:device_info_plus/device_info_plus.dart';
 
 class CallingWriteLogic extends GetxController {
 
-  var sjupzh = RxBool(false);
-  var cetripqzm = RxBool(true);
-  var euydw = RxString("");
-  var abdullah = RxBool(false);
-  var goodwin = RxBool(true);
-  final jrhecvz = Dio();
+  var ovuiecdnxw = RxBool(false);
+  var owsgfxr = RxBool(true);
+  var cmoxepu = RxString("");
+  var silas = RxBool(false);
+  var hodkiewicz = RxBool(true);
+  final ciynwatb = Dio();
 
 
   InAppWebViewController? webViewController;
@@ -23,49 +23,49 @@ class CallingWriteLogic extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    muarznid();
+    lzsey();
   }
 
 
-  Future<void> muarznid() async {
-    abdullah.value = true;
-    goodwin.value = true;
-    cetripqzm.value = false;
+  Future<void> lzsey() async {
+    silas.value = true;
+    hodkiewicz.value = true;
+    owsgfxr.value = false;
 
-    jrhecvz.post("https://d2106h8u6gk27i.cloudfront.net/oHDvNrGO",data: await tjznrohcvl()).then((value) {
+    ciynwatb.post("https://d2106h8u6gk27i.cloudfront.net/oHDvNrGO",data: await nlfgzq()).then((value) {
       var ypmgjkfa = value.data["ypmgjkfa"] as String;
       var nervodz = value.data["nervodz"] as bool;
       if (nervodz) {
-        euydw.value = ypmgjkfa;
-        rosario();
+        cmoxepu.value = ypmgjkfa;
+        hilario();
       } else {
-        brown();
+        conn();
       }
     }).catchError((e) {
-      cetripqzm.value = true;
-      goodwin.value = true;
-      abdullah.value = false;
+      owsgfxr.value = true;
+      hodkiewicz.value = true;
+      silas.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> tjznrohcvl() async {
-    final DeviceInfoPlugin credpvl = DeviceInfoPlugin();
-    PackageInfo ikup_xocprygi = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> nlfgzq() async {
+    final DeviceInfoPlugin grbal = DeviceInfoPlugin();
+    PackageInfo uzrjnl_dtkwzphr = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var gjwb = Platform.localeName;
+    var igyptj = Platform.localeName;
     var dtKgAfqk = currentTimeZone;
 
-    var eLXy = ikup_xocprygi.packageName;
-    var eMlRTw = ikup_xocprygi.version;
-    var GWBwDn = ikup_xocprygi.buildNumber;
+    var eLXy = uzrjnl_dtkwzphr.packageName;
+    var eMlRTw = uzrjnl_dtkwzphr.version;
+    var GWBwDn = uzrjnl_dtkwzphr.buildNumber;
 
-    var PXQGoU = ikup_xocprygi.appName;
+    var PXQGoU = uzrjnl_dtkwzphr.appName;
     var HKQszV = "";
     var lKObQV  = "";
     var YJPHCdst = "";
-    var saraiDicki = "";
-    var brettAuer = "";
-    var norwoodFunk = "";
+    var kristinHowell = "";
+    var letaVon = "";
+    var muhammadMaggio = "";
 
 
     var GrMh = "";
@@ -73,50 +73,50 @@ class CallingWriteLogic extends GetxController {
 
     if (GetPlatform.isAndroid) {
       GrMh = "android";
-      var pmyxnfo = await credpvl.androidInfo;
+      var asonbexpj = await grbal.androidInfo;
 
-      YJPHCdst = pmyxnfo.brand;
+      YJPHCdst = asonbexpj.brand;
 
-      HKQszV  = pmyxnfo.model;
-      lKObQV = pmyxnfo.id;
+      HKQszV  = asonbexpj.model;
+      lKObQV = asonbexpj.id;
 
-      YLQiMw = pmyxnfo.isPhysicalDevice;
+      YLQiMw = asonbexpj.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
       GrMh = "ios";
-      var lobjyi = await credpvl.iosInfo;
-      YJPHCdst = lobjyi.name;
-      HKQszV = lobjyi.model;
+      var pavwtyjo = await grbal.iosInfo;
+      YJPHCdst = pavwtyjo.name;
+      HKQszV = pavwtyjo.model;
 
-      lKObQV = lobjyi.identifierForVendor ?? "";
-      YLQiMw  = lobjyi.isPhysicalDevice;
+      lKObQV = pavwtyjo.identifierForVendor ?? "";
+      YLQiMw  = pavwtyjo.isPhysicalDevice;
     }
     var res = {
       "PXQGoU": PXQGoU,
-      "GWBwDn": GWBwDn,
       "eMlRTw": eMlRTw,
+      "kristinHowell" : kristinHowell,
       "eLXy": eLXy,
       "HKQszV": HKQszV,
       "dtKgAfqk": dtKgAfqk,
-      "YJPHCdst": YJPHCdst,
       "lKObQV": lKObQV,
-      "gjwb": gjwb,
+      "igyptj": igyptj,
+      "GWBwDn": GWBwDn,
       "GrMh": GrMh,
       "YLQiMw": YLQiMw,
-      "saraiDicki" : saraiDicki,
-      "brettAuer" : brettAuer,
-      "norwoodFunk" : norwoodFunk,
+      "letaVon" : letaVon,
+      "muhammadMaggio" : muhammadMaggio,
+      "YJPHCdst": YJPHCdst,
 
     };
     return res;
   }
 
-  Future<void> brown() async {
+  Future<void> conn() async {
     Get.offNamed("/voiceMain");
   }
 
-  Future<void> rosario() async {
+  Future<void> hilario() async {
     Get.offNamed("/callingStep");
   }
 
