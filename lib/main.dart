@@ -5,7 +5,10 @@ import 'package:real_voice/pages/calling_mode/calling_mode_binding.dart';
 import 'package:real_voice/pages/calling_mode/calling_mode_view.dart';
 import 'package:real_voice/pages/calling_setting/calling_setting_binding.dart';
 import 'package:real_voice/pages/calling_setting/calling_setting_view.dart';
+import 'package:real_voice/pages/calling_write/calling_write_binding.dart';
+import 'package:real_voice/pages/calling_write/calling_write_view.dart';
 import 'package:real_voice/pages/text_reading/text_reading_binding.dart';
+import 'package:real_voice/pages/text_reading/text_reading_step.dart';
 import 'package:real_voice/pages/text_reading/text_reading_view.dart';
 import 'package:real_voice/pages/voice_main/voice_main_binding.dart';
 import 'package:real_voice/pages/voice_main/voice_main_view.dart';
@@ -47,7 +50,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Call,
-      initialRoute: '/voiceMain',
+      initialRoute: '/',
       theme: ThemeData(
           useMaterial3: true,
           primaryColor: primaryColor,
@@ -83,8 +86,10 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Call = [
+  GetPage(name: '/', page: () => const CallingWriteView(), binding: CallingWriteBinding()),
   GetPage(name: '/voiceMain', page: () => const VoiceMainPage(), binding: VoiceMainBinding()),
   GetPage(name: '/callingMode', page: () => CallingModePage(), binding: CallingModeBinding()),
+  GetPage(name: '/callingStep', page: () => TextReadingStep()),
   GetPage(name: '/callingSetting', page: () => CallingSettingPage(), binding: CallingSettingBinding()),
   GetPage(name: '/textReading', page: () => TextReadingPage(), binding: TextReadingBinding()),
 ];
